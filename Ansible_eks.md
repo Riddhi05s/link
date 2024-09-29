@@ -15,3 +15,53 @@ inventory = /etc/ansible/hosts
 server1 ansible_host=your_server_ip
 server2 ansible_host=your_server_ip
 ```
+6. Generate ssh-key : ssh-keygen
+7. Copy ssh-key to all managed-nodes (after changing node's sshd_config settings) : ssh-copy-id root@your_server_ip
+8. Check all connections by ping : ansible all -m ping
+9. Install pip on kubernetes server and then install openshift kubernetes : pip install openshift kubernetes
+10. Create a directory on ansible server and create one ansible-playbook
+
+---
+- hosts: 172.31.5.42
+  gather_facts: no
+  tasks:
+    - name: Deploy application in Kubernetes
+      k8s:
+        state: present
+        definition:
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            name: my-app
+            namespace: default
+            labels:
+              app: my-app
+          spec:
+            replicas: 3
+            selector:
+              matchLabels:
+                app: my-app
+            template:
+              metadata:
+                labels:
+                  app: my-app
+              spec:
+                containers:
+                - name: my-app
+                  image: 039612874025.dkr.ecr.ap-south-1.amazonaws.com/my-data:latest
+                  imagePullPolicy: Always
+                  ports:
+                  - containerPort: 8080
+            strategy:
+              type: RollingUpdate
+              rollingUpdate:
+                maxSurge: 1
+                maxUnavailable: 1
+    - name: Copy service file to target
+      copy:
+        src: service.yml
+        dest: /tmp/service.yml
+ 
+    - name: Create Kubernetes Service
+      command: kubectl apply -f /tmp/service.yml
+      register: service_output
