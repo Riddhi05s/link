@@ -21,6 +21,7 @@ server2 ansible_host=your_server_ip
 9. Install pip on kubernetes server and then install openshift kubernetes : pip install openshift kubernetes
 10. Create a directory on ansible server and create one ansible-playbook
 
+```cfg
 ---
 - hosts: 172.31.5.42
   gather_facts: no
@@ -65,3 +66,5 @@ server2 ansible_host=your_server_ip
     - name: Create Kubernetes Service
       command: kubectl apply -f /tmp/service.yml
       register: service_output
+```
+
