@@ -1,8 +1,6 @@
--------------------- Jenkins Installation --------------------
-
+===============================Jenkins Installation==================================
 https://www.jenkins.io/doc/book/installing/linux/
 https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/
-
 $ sudo yum update –y
 sudo wget -O /etc/yum.repos.d/jenkins.repo \
     https://pkg.jenkins.io/redhat-stable/jenkins.repo
@@ -19,7 +17,7 @@ $ javac -version
 $ systemctl status jenkins
 
 
-### ===============================Install and Configure Maven==================================
+===============================Install and Configure Maven==================================
 https://maven.apache.org/install.html
 Copy the download link from https://maven.apache.org/download.cgi
 $ sudo su  & cd ~
@@ -48,6 +46,7 @@ $ echo $PATH
 $ mvn -v
 Java Path -- /usr/lib/jvm/java-11-openjdk-11.0.19.0.7-1.amzn2.0.1.x86_64
 MAVEN_HOME:/opt/maven     //You need to add this at Jenkins Job under Maven Installations
+
 
 ===============================Setup Tomcat Server==================================
 $ sudo su
