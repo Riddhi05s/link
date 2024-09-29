@@ -609,13 +609,9 @@ filter_plugins     = /usr/share/ansible_plugins/filter_plugins
 # paramiko on older platforms rather than removing it
 #ssh_args = -o ControlMaster=auto -o ControlPersist=60s
 
-# The path to use for the ControlPath sockets. This defaults to
-# "%(directory)s/ansible-ssh-%%h-%%p-%%r", however on some systems with
-# very long hostnames or very long path names (caused by long user names or 
-# deeply nested home directories) this can exceed the character limit on
-# file socket names (108 characters for most platforms). In that case, you 
-# may wish to shorten the string below.
-# 
+# The path to use for the ControlPath sockets. This defaults to "%(directory)s/ansible-ssh-%%h-%%p-%%r", however on some systems with
+# very long hostnames or very long path names (caused by long user names or deeply nested home directories) this can exceed the character limit on
+# file socket names (108 characters for most platforms). In that case, you may wish to shorten the string below.
 # Example: 
 # control_path = %(directory)s/%%h-%%r
 #control_path = %(directory)s/ansible-ssh-%%h-%%p-%%r
@@ -726,7 +722,7 @@ go in host
 cd /etc/passwd
 u will get thor user in it
 
-2)security -http
+2) security -http
 cat index.html
 helloo
 vim configure.yaml
