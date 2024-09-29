@@ -1,4 +1,4 @@
-### -------------------- Jenkins Installation --------------------
+-------------------- Jenkins Installation --------------------
 https://www.jenkins.io/doc/book/installing/linux/
 https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/
 $ sudo yum update –y
