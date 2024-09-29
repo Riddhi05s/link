@@ -20,6 +20,7 @@
 - docker start webapp-01 
 - docker attach webapp-01 
 
+
 ### inside webapp-01 
 - apt update -y
 - apt install apache2 -y
@@ -39,6 +40,7 @@ ctrl + p  + ctrl + q    Outside of webapp-01
 - docker run -it --name webapp-02 -p 8080:80 ubuntu:latest /bin/bash
 - do the same procedure as done in previously, Website will be available at <public_ip>:8080, if you added tcp port 8080 in inbound security rules
 - docker kill webapp-02     //all the data will be deleted, since it was stored on temporary storage
+
 
 ### // to add persistant volume to the container
 - docker volume ls
