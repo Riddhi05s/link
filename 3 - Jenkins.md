@@ -1,4 +1,4 @@
-### *===============================Jenkins Installation==================================*
+### -------------------- Jenkins Installation --------------------
 https://www.jenkins.io/doc/book/installing/linux/
 https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/
 $ sudo yum update –y
@@ -17,7 +17,7 @@ $ javac -version
 $ systemctl status jenkins
 
 
-### *===============================Install and Configure Maven==================================*
+### ===============================Install and Configure Maven==================================
 https://maven.apache.org/install.html
 Copy the download link from https://maven.apache.org/download.cgi
 $ sudo su  & cd ~
