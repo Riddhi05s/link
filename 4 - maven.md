@@ -6,7 +6,7 @@ Maven-Integration
     - Copy public ssh-key and add to github account: 
         - *cd /.ssh*
         - *cat id_rsa.pub*
-    - Clone java application repo in home: *git clone git@github.com:adinathmahangareLTI/jenkins-maven.git*
+    - Clone java application repo in home: *git clone git@github.com:Riddhi05s/new-proj.git*
     - Create new Repo in github account
     - Remove remote from local Repo: *git remote remove origin*
     - Add remote to new remote Repo: *git remote add orgin <repo_link>*
