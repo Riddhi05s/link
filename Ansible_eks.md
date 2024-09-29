@@ -21,7 +21,7 @@ server2 ansible_host=your_server_ip
 9. Install pip on kubernetes server and then install openshift kubernetes : pip install openshift kubernetes
 10. Create a directory on ansible server and create one ansible-playbook
 
-```cfg
+```yml
 ---
 - hosts: 172.31.5.42
   gather_facts: no
@@ -68,3 +68,22 @@ server2 ansible_host=your_server_ip
       register: service_output
 ```
 
+11. Create service.yml file in the same directory
+```yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: regapp-service
+  labels:
+    app: my-app
+spec:
+  selector:
+    app: my-app
+
+  ports:
+    - port: 8080
+      targetPort: 8080
+
+  type: LoadBalancer
+```
+12. manually run ansible-playbook and check if service is created in kubernetes server, and get external ip of service to host application.
