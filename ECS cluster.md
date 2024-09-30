@@ -14,3 +14,6 @@
 11. Check if its state in running
 12. Copy ip address and use 8080 port with /webapp path
 13. Successfully hosted image on container of ECS.
+
+![image](https://github.com/user-attachments/assets/80bba317-6309-444c-9a7c-5614e2c3713c)
+
